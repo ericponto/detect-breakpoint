@@ -1,0 +1,15 @@
+#testEl {
+	--breakpoint: small;
+}
+
+@media all and (min-width: 40em;) {
+	#testEl {
+		--breakpoint: medium;
+	}
+}
+
+@media all and (min-width: 75em) {
+	#testEl {
+		--breakpoint: large;
+	}
+}

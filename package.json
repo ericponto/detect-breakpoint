@@ -1,0 +1,17 @@
+{
+  "name": "detect-breakpoint",
+  "version": "0.0.1",
+  "description": "Detecting media query breakpoints in JavaScript using CSS Variables",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericponto/detect-breakpoint.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericponto/detect-breakpoint/issues"
+  },
+  "homepage": "https://github.com/ericponto/detect-breakpoint"
+}
