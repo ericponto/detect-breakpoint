@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/ericponto/detect-breakpoint/issues"
   },
-  "homepage": "https://github.com/ericponto/detect-breakpoint"
+  "homepage": "https://github.com/ericponto/detect-breakpoint",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  }
 }

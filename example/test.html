@@ -3,15 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Detect Breakpoint Example</title>
-	<link rel="stylesheet" href="styles.css" type="text/css" />
+	<link rel="stylesheet" href="built-styles.css" type="text/css" />
 </head>
 <body>
 	<div id="testEl"></div>
 	
 	<script src="../src/detectBreakpoint.js"></script>
 	<script>
-		var testEl = document.getElementById("testEl");
-		var breakpoint = detectBreakpoint(testEl);
+		var breakpoint = detectBreakpoint("#testEl");
 		
 		testEl.innerHTML = breakpoint;
 	</script>

@@ -24,10 +24,22 @@
 	 * @returns {String} the active breakpoint
 	 */
 	function detectViaPseudoEl(selector) {
-		var el = document.querySelector(selector + "__detectBreakpoint__");
+		// create an empty div that matches the fake selector
+		var el = document.createElement("div");
+		el.setAttribute("data-selector", selector + "__detectBreakpoint__");
+		
+		// add it to the body so it can properly calc styles
+		var body = document.body;
+		body.appendChild(el);
 			
-		return window.getComputedStyle(el, ":before")
+		// get the breakpoint value
+		var breakpoint =  window.getComputedStyle(el, ":before")
 			.getPropertyValue("content");
+		
+		// remove the element
+		body.removeChild(el);
+		
+		return breakpoint;
 	}
 	
 	/**
