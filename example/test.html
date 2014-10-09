@@ -3,16 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Detect Breakpoint Example</title>
-	<link rel="stylesheet" href="built-styles.css" type="text/css" />
+	<link rel="stylesheet" href="styles.css" type="text/css" />
 </head>
 <body>
 	<div id="testEl"></div>
 	
-	<script src="../src/detectBreakpoint.js"></script>
+	<script src="../dist/detectBreakpoint.min.js"></script>
 	<script>
-		var breakpoint = detectBreakpoint("#testEl");
-		
-		testEl.innerHTML = breakpoint;
+		detectBreakpoint.ready(function() {
+			var breakpoint = detectBreakpoint("#testEl");
+			var testEl = document.querySelector("#testEl");
+			testEl.innerHTML = breakpoint;
+		});
 	</script>
 </body>
 </html>

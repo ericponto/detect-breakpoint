@@ -206,7 +206,7 @@
 		return window.getComputedStyle(el)
 			.getPropertyValue("--breakpoint");
 	}
-
+	
 	/**
 	 * detect the active breakpoint via the `content` of a pseudo element
 	 * @param {String} selector

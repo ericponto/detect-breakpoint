@@ -1,14 +1,22 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
-		propToContent: {
-			example: {
-				src: "example/styles.css",
-				dest: "example/built-styles.css"
+		uglify: {
+			dist: {
+				files: {
+					"dist/detectBreakpoint.min.js": "src/detectBreakpoint.js"
+				}
+			}
+		},
+		copy: {
+			dist: {
+				src: "src/detectBreakpoint.js",
+				dest: "dist/detectBreakpoint.js"
 			}
 		}
 	});
 	
-	grunt.loadTasks("task");
+	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks("grunt-contrib-copy");
 	
-	grunt.registerTask("default", ["propToContent"]);
+	grunt.registerTask("default", ["copy", "uglify"]);
 }
