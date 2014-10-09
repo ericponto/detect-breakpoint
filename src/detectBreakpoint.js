@@ -31,6 +31,7 @@
 		
 		// if all xhrs are done, then fire the callbacks
 		if (done) {
+			ready = true;
 			fireCallbacks();
 		}
 	}
@@ -159,6 +160,7 @@
 	/**
 	 * ajax in all the `link` stylesheets so they can be parsed
 	 * hopefully the css is cached so won't take much of a performance hit
+	 * @returns {xhr} The xhr instance
 	 */
 	function getCSS(href) {
 		var xhr = new XMLHttpRequest();
@@ -236,6 +238,11 @@
 	 * @returns {String} The value of the --breakpoint property
 	 */
 	function detectBreakpoint(selector) {
+		// if getcomputedstyle isn't supported, then return nothing
+		if (!window.getComputedStyle) {
+			return;
+		}
+		
 		// happy path, get custom prop from getComputedStyle
 		if (customPropsSupported) {
 			return detectViaCustomProp(selector)
