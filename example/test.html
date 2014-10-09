@@ -10,10 +10,18 @@
 	
 	<script src="../dist/detectBreakpoint.min.js"></script>
 	<script>
-		detectBreakpoint.ready(function() {
+		function getBreakpoint() {
 			var breakpoint = detectBreakpoint("#testEl");
 			var testEl = document.querySelector("#testEl");
-			testEl.innerHTML = breakpoint;
+			testEl.innerHTML = "The active break point is: " + breakpoint;
+		}
+		
+		detectBreakpoint.ready(function() {
+			window.addEventListener("resize", function() {
+				getBreakpoint();
+			}, false);
+			
+			getBreakpoint();
 		});
 	</script>
 </body>
