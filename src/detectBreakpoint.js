@@ -125,6 +125,7 @@
 	function parseCSS(css) {
 		var results = "";
 		var mediaQueryResults = "";
+		var allCss = "";
 		
 		// remove comments and new lines
 		css = css.replace(RE_COMMENT, "")
@@ -153,8 +154,12 @@
 			results += processRule(rules[i]);
 		}
 		
-		createStyleSheet(results + mediaQueryResults);
+		allCss = results + mediaQueryResults;
 		
+		if (allCss.length) {
+			allCss += "[data-bp-selector]:before{display:none}"
+			createStyleSheet(allCss);
+		}
 	}
 	
 	/**
